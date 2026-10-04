@@ -1,66 +1,306 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hanyang Li</title>
+<style>html{color-scheme:light dark}body{margin:0}body>div{min-height:100vh}</style>
 </head>
 <body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">Home</div>
-<div class="menu-item"><a href="index.html" class="current">About&nbsp;me</a></div>
-<div class="menu-item"><a href="publications.html">Publications</a></div>
-<div class="menu-item"><a href="talks.html">Talks</a></div>
-</td>
-<td id="layout-content">
-<div id="toptitle">
-<h1>Hanyang Li</h1>
+<style>
+#hanyang-homepage-draft {
+  --hp-bg: light-dark(#ffffff, #181b20);
+  --hp-text: light-dark(#282d35, #e5e8ee);
+  --hp-muted: light-dark(#626976, #b0b8c5);
+  --hp-link: light-dark(#234f83, #a3c5ec);
+  --hp-rule: light-dark(#dce1e7, #3c434e);
+  color: var(--hp-text);
+  background: var(--hp-bg);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.65;
+  padding: 38px 44px 30px;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+#hanyang-homepage-draft * { box-sizing: border-box; }
+#hanyang-homepage-draft .hp-inner { max-width: 940px; margin: 0 auto; }
+#hanyang-homepage-draft header { border-bottom: 1px solid var(--hp-rule); padding-bottom: 23px; }
+#hanyang-homepage-draft h1 { font-size: 42px; line-height: 1.15; font-weight: 400; margin: 0 0 10px; letter-spacing: -.8px; }
+#hanyang-homepage-draft a { color: var(--hp-link); text-decoration: none; }
+#hanyang-homepage-draft a:hover { text-decoration: underline; }
+#hanyang-homepage-draft a:focus-visible { outline: 2px solid var(--hp-link); outline-offset: 4px; }
+#hanyang-homepage-draft nav { display: flex; flex-wrap: wrap; gap: 8px 25px; margin-top: 18px; font-family: Arial, sans-serif; font-size: 13px; }
+#hanyang-homepage-draft .hp-section { display: grid; grid-template-columns: 1fr; gap: 18px; padding: 31px 0; border-bottom: 1px solid var(--hp-rule); }
+#hanyang-homepage-draft .hp-about-layout { display: grid; grid-template-columns: minmax(0, 1fr) 156px; gap: 24px; align-items: start; }
+#hanyang-homepage-draft .hp-portrait { display: block; width: 156px; max-width: 100%; height: auto; aspect-ratio: 1171 / 1416; object-fit: cover; grid-column: 2; grid-row: 1; }
+#hanyang-homepage-draft .hp-about-copy { grid-column: 1; grid-row: 1; }
+#hanyang-homepage-draft h2 { font-size: 21px; font-weight: 700; margin: 0; line-height: 1.4; }
+#hanyang-homepage-draft h3 { font-size: 17px; font-weight: 500; margin: 0 0 10px; }
+#hanyang-homepage-draft p { margin: 0 0 15px; }
+#hanyang-homepage-draft p:last-child { margin-bottom: 0; }
+#hanyang-homepage-draft strong { font-weight: 500; }
+#hanyang-homepage-draft .hp-theme { margin: 0 0 21px; }
+#hanyang-homepage-draft .hp-theme:last-child { margin-bottom: 0; }
+#hanyang-homepage-draft .hp-theme h3 { margin-bottom: 5px; }
+#hanyang-homepage-draft .hp-theme h3,
+#hanyang-homepage-draft .hp-topic-view .hp-paper-group h3 { font-weight: 700; }
+#hanyang-homepage-draft .hp-paper-list { margin: 0; padding-left: 1.65em; list-style: decimal; }
+#hanyang-homepage-draft .hp-paper { margin: 0 0 24px; }
+#hanyang-homepage-draft .hp-paper:last-child { margin-bottom: 0; }
+#hanyang-homepage-draft .hp-paper-title { display: block; margin-bottom: 4px; font-size: 16px; line-height: 1.45; }
+#hanyang-homepage-draft .hp-authors { font-size: 14px; margin: 0 0 2px; line-height: 1.5; }
+#hanyang-homepage-draft .hp-authors strong,
+#hanyang-homepage-draft #hp-contact strong { font-weight: 700; }
+#hanyang-homepage-draft .hp-status { color: var(--hp-muted); font-size: 14px; margin: 0; line-height: 1.5; }
+#hanyang-homepage-draft .hp-resource-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 4px 0 0; font-size: 14px; line-height: 1.5; }
+#hanyang-homepage-draft .hp-award-list { color: var(--hp-muted); font-size: 13px; margin: 5px 0 0; padding-left: 19px; line-height: 1.5; list-style-type: disc; }
+#hanyang-homepage-draft .hp-award-list li { margin: 3px 0; }
+#hanyang-homepage-draft .hp-paper-group + .hp-paper-group { margin-top: 34px; }
+#hanyang-homepage-draft .hp-grouping { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; margin: -5px 0 23px; }
+#hanyang-homepage-draft .hp-grouping label { font-family: Arial, sans-serif; font-size: 13px; color: var(--hp-muted); background: transparent; border: 0; border-bottom: 2px solid transparent; padding: 7px 0; }
+#hanyang-homepage-draft .hp-year-view { display: none; }
+#hanyang-homepage-draft #hp-view-year:checked ~ .hp-topic-view { display: none; }
+#hanyang-homepage-draft #hp-view-year:checked ~ .hp-year-view { display: block; }
+#hanyang-homepage-draft #hp-view-topic:checked ~ .hp-grouping label[for="hp-view-topic"],
+#hanyang-homepage-draft #hp-view-year:checked ~ .hp-grouping label[for="hp-view-year"] { color: var(--hp-link); border-bottom-color: var(--hp-link); }
+#hanyang-homepage-draft #hp-view-topic:focus-visible ~ .hp-grouping label[for="hp-view-topic"],
+#hanyang-homepage-draft #hp-view-year:focus-visible ~ .hp-grouping label[for="hp-view-year"] { outline: 2px solid var(--hp-link); outline-offset: 4px; }
+#hanyang-homepage-draft .hp-screen-reader { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+#hanyang-homepage-draft [hidden] { display: none; }
+@media (pointer: coarse) { #hanyang-homepage-draft .hp-grouping label { min-height: 44px; min-width: 64px; } }
+#hanyang-homepage-draft .hp-talks { margin: 0; padding: 0; list-style: none; }
+#hanyang-homepage-draft .hp-talks li { display: grid; grid-template-columns: minmax(0, 1fr) 86px; gap: 14px; margin: 0 0 17px; }
+#hanyang-homepage-draft .hp-talks li:last-child { margin-bottom: 0; }
+#hanyang-homepage-draft .hp-talk-venue { display: block; }
+#hanyang-homepage-draft .hp-talk-detail { display: block; color: var(--hp-muted); font-size: 14px; line-height: 1.5; }
+#hanyang-homepage-draft .hp-date { color: var(--hp-muted); text-align: right; font-family: Arial, sans-serif; font-size: 12px; padding-top: 3px; white-space: nowrap; }
+#hanyang-homepage-draft footer { padding-top: 22px; color: var(--hp-muted); font-family: Arial, sans-serif; font-size: 12px; }
+@media (max-width: 680px) {
+  #hanyang-homepage-draft { padding: 28px 24px; }
+  #hanyang-homepage-draft .hp-section { gap: 15px; padding: 25px 0; }
+  #hanyang-homepage-draft h1 { font-size: 36px; }
+}
+@media (max-width: 400px) {
+  #hanyang-homepage-draft { padding: 24px 18px; }
+  #hanyang-homepage-draft .hp-talks li { grid-template-columns: 1fr; gap: 2px; }
+  #hanyang-homepage-draft .hp-date { text-align: left; padding: 0; }
+}
+@media (max-width: 520px) {
+  #hanyang-homepage-draft .hp-about-layout { grid-template-columns: 1fr; gap: 18px; }
+  #hanyang-homepage-draft .hp-portrait { grid-column: 1; grid-row: 1; }
+  #hanyang-homepage-draft .hp-about-copy { grid-column: 1; grid-row: 2; }
+}
+</style>
+<div id="hanyang-homepage-draft">
+  <div class="hp-inner">
+    <header id="hp-home">
+      <h1>Hanyang Li</h1>
+      <nav aria-label="Homepage sections">
+        <a href="#hp-about">About</a>
+        <a href="#hp-research">Research</a>
+        <a href="#hp-publications">Publications and Preprints</a>
+        <a href="#hp-talks">Talks and Presentations</a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=V45E46EAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://github.com/lhyoung99" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="hp-section" id="hp-about" aria-labelledby="hp-about-title">
+      <h2 id="hp-about-title">About</h2>
+      <div class="hp-about-layout">
+        <img class="hp-portrait" src="portrait-lights.jpg" alt="Hanyang Li" width="1171" height="1416" decoding="async" data-alternate-src="photos.jpg">
+        <div class="hp-about-copy">
+        <p>I am a Ph.D. candidate in Operations Research at <a href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer">UC Berkeley</a>, advised by <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a>.</p>
+        <p>Before Berkeley, I earned an M.S. in Industrial Engineering from the <a href="https://twin-cities.umn.edu/" target="_blank" rel="noopener noreferrer">University of Minnesota, Twin Cities</a>, in 2023 and a B.S. in Mathematics and Applied Mathematics from the <a href="https://en.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a> in 2021.</p>
+        <p id="hp-contact"><strong>Email:</strong> hanyang_li AT berkeley DOT edu</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hp-section" id="hp-research" aria-labelledby="hp-research-title">
+      <h2 id="hp-research-title">Research Interests</h2>
+      <div>
+        <p>My research focuses on optimization theory and algorithm design. I study how algorithms can make reliable progress on nonsmooth or ill-conditioned landscapes arising from implicitly defined objectives (e.g., value functions in parametric optimization and sequential decision-making). I also investigate how compressed representations affect optimization (e.g., quantization in memory-efficient model training and inference).</p>
+      </div>
+    </section>
+
+    <section class="hp-section" id="hp-publications" aria-labelledby="hp-publications-title">
+      <h2 id="hp-publications-title">Publications and Preprints</h2>
+      <div>
+        <input class="hp-screen-reader" type="radio" name="hp-publication-view" id="hp-view-topic" value="topic" checked aria-controls="hp-publication-groups">
+        <input class="hp-screen-reader" type="radio" name="hp-publication-view" id="hp-view-year" value="year" aria-controls="hp-publication-years">
+        <div class="hp-grouping">
+          <label class="cursor-interaction" for="hp-view-topic">By topic</label>
+          <label class="cursor-interaction" for="hp-view-year">By year</label>
+        </div>
+        <div id="hp-publication-groups" class="hp-topic-view">
+        <div class="hp-paper-group" data-publication-group="nonsmooth">
+          <h3>Theory and Algorithms for Nonsmooth Optimization</h3>
+          <ol class="hp-paper-list" start="1">
+            <li class="hp-paper" data-topic="nonsmooth" data-year="2025" data-order="1">
+              <a class="hp-paper-title" href="https://arxiv.org/abs/2505.07143" target="_blank" rel="noopener noreferrer">Subgradient Regularization: A Descent-Oriented Subgradient Method for Nonsmooth Optimization</a>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status">Submitted, 2025</p>
+              <p class="hp-resource-links"><a href="https://github.com/lhyoung99/subgradient-regularization" target="_blank" rel="noopener noreferrer">[code]</a></p>
+            </li>
+            <li class="hp-paper" data-topic="nonsmooth" data-year="2025" data-order="2">
+              <a class="hp-paper-title" href="https://pubsonline.informs.org/doi/10.1287/moor.2023.0202" target="_blank" rel="noopener noreferrer">Variational Theory and Algorithms for a Class of Asymptotically Approachable Nonconvex Problems</a>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status"><em>Mathematics of Operations Research</em>, 51(1), 1–34</p>
+              <p class="hp-resource-links"><a href="https://raw.githubusercontent.com/lhyoung99/lhyoung99.github.io/main/ADC_2023INFORMS.pdf" target="_blank" rel="noopener noreferrer">[slide]</a></p>
+              <ul class="hp-award-list">
+                <li>Katta G. Murty Prize for Best Paper in Optimization, UC Berkeley (2025).</li>
+              </ul>
+            </li>
+            <li class="hp-paper" data-topic="nonsmooth" data-year="2024" data-order="3">
+              <a class="hp-paper-title" href="https://epubs.siam.org/doi/abs/10.1137/22M1488533?journalCode=sjope8" target="_blank" rel="noopener noreferrer">A Decomposition Algorithm for Two-Stage Stochastic Programs with Nonconvex Recourse Functions</a>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status"><em>SIAM Journal on Optimization</em>, 34(1), 306–335</p>
+              <p class="hp-resource-links"><a href="https://github.com/lhyoung99/Decomposition_NonvexSP" target="_blank" rel="noopener noreferrer">[code]</a> <a href="https://raw.githubusercontent.com/lhyoung99/lhyoung99.github.io/main/Decomp_2023ICSP.pdf" target="_blank" rel="noopener noreferrer">[slide]</a></p>
+              <ul class="hp-award-list">
+                <li>Runner-up, Dupacova–Prekopa Best Student Paper Prize (2023).</li>
+                <li>Third Place, INFORMS JFIG Paper Competition (2022).</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+        <div class="hp-paper-group" data-publication-group="efficient">
+          <h3>Optimization for Memory-Efficient Training and Inference</h3>
+          <ol class="hp-paper-list" start="1">
+            <li class="hp-paper" data-topic="efficient" data-year="2026" data-order="1">
+              <a class="hp-paper-title" href="https://arxiv.org/abs/2609.21834" target="_blank" rel="noopener noreferrer">Beyond Shadow Weights: Quantization-Aware Training as Quantized-Endpoint Descent</a>
+              <p class="hp-authors"><a href="https://samuel-xu825.github.io/index.html" target="_blank" rel="noopener noreferrer">Sheng-An Xu</a>, <strong>Hanyang Li</strong>, <a href="https://jianhaoma.github.io/" target="_blank" rel="noopener noreferrer">Jianhao Ma</a>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status">Submitted, 2026</p>
+            </li>
+            <li class="hp-paper" data-topic="efficient" data-year="2026" data-order="2">
+              <a class="hp-paper-title" href="https://arxiv.org/abs/2606.09012" target="_blank" rel="noopener noreferrer">Understanding Quantization-Aware Training: Gradients at Quantized Weights Bias to the Low-Loss Basin</a>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, <a href="https://jianhaoma.github.io/" target="_blank" rel="noopener noreferrer">Jianhao Ma</a>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status">Submitted, 2026</p>
+            </li>
+            <li class="hp-paper" data-topic="efficient" data-year="2026" data-order="3">
+              <span class="hp-paper-title">Rounding in Preconditioner Space: Redesigning 4-bit AdamW Optimizer-State Quantization</span>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, Shao Tang, Daniel Braithwaite, Gregory Dexter, Leonardo Neves, Abhishek Shivanna, Aman Gupta, Hiroto Udagawa, Daniel Silva, Rohan Ramanath</p>
+              <p class="hp-status">Submitted, 2026</p>
+              <ul class="hp-award-list">
+                <li>Preliminary version appears in the NeurIPS 2026 Workshop on Optimization for Machine Learning (OPT 2026).</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+        </div>
+        <div id="hp-publication-years" class="hp-year-view">
+        <div class="hp-paper-group" data-publication-group="2026">
+          <h3>2026</h3>
+          <ol class="hp-paper-list" start="1">
+            <li class="hp-paper" data-topic="efficient" data-year="2026" data-order="1">
+              <a class="hp-paper-title" href="https://arxiv.org/abs/2609.21834" target="_blank" rel="noopener noreferrer">Beyond Shadow Weights: Quantization-Aware Training as Quantized-Endpoint Descent</a>
+              <p class="hp-authors"><a href="https://samuel-xu825.github.io/index.html" target="_blank" rel="noopener noreferrer">Sheng-An Xu</a>, <strong>Hanyang Li</strong>, <a href="https://jianhaoma.github.io/" target="_blank" rel="noopener noreferrer">Jianhao Ma</a>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status">Submitted, 2026</p>
+            </li>
+            <li class="hp-paper" data-topic="efficient" data-year="2026" data-order="2">
+              <a class="hp-paper-title" href="https://arxiv.org/abs/2606.09012" target="_blank" rel="noopener noreferrer">Understanding Quantization-Aware Training: Gradients at Quantized Weights Bias to the Low-Loss Basin</a>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, <a href="https://jianhaoma.github.io/" target="_blank" rel="noopener noreferrer">Jianhao Ma</a>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status">Submitted, 2026</p>
+            </li>
+            <li class="hp-paper" data-topic="efficient" data-year="2026" data-order="3">
+              <span class="hp-paper-title">Rounding in Preconditioner Space: Redesigning 4-bit AdamW Optimizer-State Quantization</span>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, Shao Tang, Daniel Braithwaite, Gregory Dexter, Leonardo Neves, Abhishek Shivanna, Aman Gupta, Hiroto Udagawa, Daniel Silva, Rohan Ramanath</p>
+              <p class="hp-status">Submitted, 2026</p>
+              <ul class="hp-award-list">
+                <li>Preliminary version appears in the NeurIPS 2026 Workshop on Optimization for Machine Learning (OPT 2026).</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+        <div class="hp-paper-group" data-publication-group="2025">
+          <h3>2025</h3>
+          <ol class="hp-paper-list" start="1">
+            <li class="hp-paper" data-topic="nonsmooth" data-year="2025" data-order="1">
+              <a class="hp-paper-title" href="https://arxiv.org/abs/2505.07143" target="_blank" rel="noopener noreferrer">Subgradient Regularization: A Descent-Oriented Subgradient Method for Nonsmooth Optimization</a>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status">Submitted, 2025</p>
+              <p class="hp-resource-links"><a href="https://github.com/lhyoung99/subgradient-regularization" target="_blank" rel="noopener noreferrer">[code]</a></p>
+            </li>
+            <li class="hp-paper" data-topic="nonsmooth" data-year="2025" data-order="2">
+              <a class="hp-paper-title" href="https://pubsonline.informs.org/doi/10.1287/moor.2023.0202" target="_blank" rel="noopener noreferrer">Variational Theory and Algorithms for a Class of Asymptotically Approachable Nonconvex Problems</a>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status"><em>Mathematics of Operations Research</em>, 51(1), 1–34</p>
+              <p class="hp-resource-links"><a href="https://raw.githubusercontent.com/lhyoung99/lhyoung99.github.io/main/ADC_2023INFORMS.pdf" target="_blank" rel="noopener noreferrer">[slide]</a></p>
+              <ul class="hp-award-list">
+                <li>Katta G. Murty Prize for Best Paper in Optimization, UC Berkeley (2025).</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+        <div class="hp-paper-group" data-publication-group="2024">
+          <h3>2024</h3>
+          <ol class="hp-paper-list" start="1">
+            <li class="hp-paper" data-topic="nonsmooth" data-year="2024" data-order="3">
+              <a class="hp-paper-title" href="https://epubs.siam.org/doi/abs/10.1137/22M1488533?journalCode=sjope8" target="_blank" rel="noopener noreferrer">A Decomposition Algorithm for Two-Stage Stochastic Programs with Nonconvex Recourse Functions</a>
+              <p class="hp-authors"><strong>Hanyang Li</strong>, <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a></p>
+              <p class="hp-status"><em>SIAM Journal on Optimization</em>, 34(1), 306–335</p>
+              <p class="hp-resource-links"><a href="https://github.com/lhyoung99/Decomposition_NonvexSP" target="_blank" rel="noopener noreferrer">[code]</a> <a href="https://raw.githubusercontent.com/lhyoung99/lhyoung99.github.io/main/Decomp_2023ICSP.pdf" target="_blank" rel="noopener noreferrer">[slide]</a></p>
+              <ul class="hp-award-list">
+                <li>Runner-up, Dupacova–Prekopa Best Student Paper Prize (2023).</li>
+                <li>Third Place, INFORMS JFIG Paper Competition (2022).</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hp-section" id="hp-talks" aria-labelledby="hp-talks-title">
+      <h2 id="hp-talks-title">Talks and Presentations</h2>
+      <ul class="hp-talks">
+        <li>
+          <div><span class="hp-talk-venue">INFORMS Annual Meeting · San Francisco, CA</span><span class="hp-talk-detail">Session: Optimization Methods for Quantizing and Pruning LLMs · Upcoming</span></div>
+          <span class="hp-date">11/2026</span>
+        </li>
+        <li>
+          <div><span class="hp-talk-venue">Cornell ORIE Young Researchers Workshop · Ithaca, NY</span><span class="hp-talk-detail">Poster presentation · Upcoming</span></div>
+          <span class="hp-date">10/2026</span>
+        </li>
+        <li>
+          <div><span class="hp-talk-venue">INFORMS Optimization Society Conference · Atlanta, GA</span><span class="hp-talk-detail">Session: Recent Advances in Stochastic and Large-Scale Optimization</span></div>
+          <span class="hp-date">03/2026</span>
+        </li>
+        <li>
+          <div><span class="hp-talk-venue">Hong Kong University of Science and Technology</span><span class="hp-talk-detail">Joint IEDA/ISOM Seminar</span></div>
+          <span class="hp-date">01/2026</span>
+        </li>
+        <li>
+          <div><span class="hp-talk-venue">Hong Kong Polytechnic University</span><span class="hp-talk-detail">AMA Seminar Series on Young Scholars in Optimization and Data Science</span></div>
+          <span class="hp-date">01/2026</span>
+        </li>
+        <li>
+          <div><span class="hp-talk-venue">International Conference on Continuous Optimization · Los Angeles, CA</span><span class="hp-talk-detail">Session: First-order Methods for Nonsmooth Constrained Optimization</span></div>
+          <span class="hp-date">07/2025</span>
+        </li>
+        <li>
+          <div><span class="hp-talk-venue">INFORMS Annual Meeting · Phoenix, AZ</span><span class="hp-talk-detail">Session: Recent Advances in Nonsmooth Optimization</span></div>
+          <span class="hp-date">10/2023</span>
+        </li>
+        <li>
+          <div><span class="hp-talk-venue">XVI International Conference on Stochastic Programming · Davis, CA</span><span class="hp-talk-detail">Student Paper Prize Competition</span></div>
+          <span class="hp-date">07/2023</span>
+        </li>
+      </ul>
+    </section>
+    <footer>Last updated: October 2026</footer>
+  </div>
 </div>
-<table class="imgtable"><tr><td>
-<img src="photos.jpg" alt="" width="156px" height="189px" />&nbsp;</td>
-<td align="left"><p>I am a Ph.D. student in the Department of <a href="https://ieor.berkeley.edu/">Industrial Engineering and Operations Research (IEOR)</a> at the University of California, Berkeley, where I am fortunate to be advised by Professor <a href="https://sites.google.com/site/optyingcui/">Ying Cui</a>.</p>
-</td></tr></table>
-<h2>Contact</h2>
-<ul>
-<li><p>E-mail: hanyang_li AT berkeley DOT edu</p>
-</li>
-</ul>
-<h2>Education</h2>
-<ul>
-<li><p>University of California, Berkeley<br />
-Ph.D. in Operations Research, 09/2023 - Present</p>
-</li>
-</ul>
-<ul>
-<li><p>University of Minnesota, Twin Cities<br />
-M.S. in Industrial and Systems Engineering, 09/2021 - 05/2023</p>
-</li>
-</ul>
-<ul>
-<li><p>University of Science and Technology of China<br />
-B.S. in Mathematics and Applied Mathematics, 09/2017 - 07/2021</p>
-</li>
-</ul>
-<h2>Research interest</h2>
-<ul>
-<li><p>Theoratical foundations of nonsmooth optimization</p>
-</li>
-<li><p>Efficient computational methods for structured nonsmooth problems</p>
-</li>
-<li><p>Robustness and adaptivit</p>
-</li>
-</ul>
-<div id="footer">
-<div id="footer-text">
-Page generated 2025-07-26, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
-</div>
-</div>
-</td>
-</tr>
-</table>
+<script>
+(() => {
+  const root = document.getElementById('hanyang-homepage-draft');
+  if (!root) return;
+  const portrait = root.querySelector('.hp-portrait');
+  if (!portrait) return;
+  const alternate = portrait.getAttribute('data-alternate-src');
+  if (alternate && Math.random() < 0.5) portrait.src = alternate;
+})();
+</script>
 </body>
 </html>
