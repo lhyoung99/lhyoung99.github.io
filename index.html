@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hanyang Li</title>
 <style>html{color-scheme:light dark}body{margin:0}body>div{min-height:100vh}</style>
+<script>
+(() => {
+  try {
+    const theme = localStorage.getItem('hanyang-homepage-theme');
+    if (theme === 'light' || theme === 'dark') document.documentElement.style.colorScheme = theme;
+  } catch (_) {}
+})();
+</script>
 </head>
 <body>
 <style>
@@ -26,6 +34,11 @@
 #hanyang-homepage-draft * { box-sizing: border-box; }
 #hanyang-homepage-draft .hp-inner { max-width: 940px; margin: 0 auto; }
 #hanyang-homepage-draft header { border-bottom: 1px solid var(--hp-rule); padding-bottom: 23px; }
+#hanyang-homepage-draft .hp-header-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+#hanyang-homepage-draft .hp-theme-toggle { flex-shrink: 0; color: var(--hp-muted); background: transparent; border: 1px solid var(--hp-rule); border-radius: 4px; padding: 7px 10px; font: 13px Arial, sans-serif; }
+#hanyang-homepage-draft .hp-theme-toggle:hover { color: var(--hp-link); border-color: var(--hp-link); }
+#hanyang-homepage-draft .hp-theme-toggle:focus-visible { outline: 2px solid var(--hp-link); outline-offset: 4px; }
+@media (pointer: coarse) { #hanyang-homepage-draft .hp-theme-toggle { min-height: 44px; } }
 #hanyang-homepage-draft h1 { font-size: 42px; line-height: 1.15; font-weight: 400; margin: 0 0 10px; letter-spacing: -.8px; }
 #hanyang-homepage-draft a { color: var(--hp-link); text-decoration: none; }
 #hanyang-homepage-draft a:hover { text-decoration: underline; }
@@ -109,12 +122,17 @@
 <div id="hanyang-homepage-draft">
   <div class="hp-inner">
     <header id="hp-home">
-      <h1>Hanyang Li</h1>
+      <div class="hp-header-top">
+        <h1>Hanyang Li</h1>
+        <button class="hp-theme-toggle cursor-interaction" type="button" aria-label="Switch to dark mode">Dark mode</button>
+      </div>
       <nav aria-label="Homepage sections">
         <a href="#hp-about">About</a>
         <a href="#hp-publications">Publications</a>
         <a href="#hp-talks">Talks and Presentations</a>
         <a href="#hp-teaching">Teaching</a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=V45E46EAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://github.com/lhyoung99" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
     </header>
 
@@ -343,6 +361,33 @@
 (() => {
   const root = document.getElementById('hanyang-homepage-draft');
   if (!root) return;
+  const themeToggle = root.querySelector('.hp-theme-toggle');
+  const systemPreference = window.matchMedia('(prefers-color-scheme: dark)');
+  let selectedTheme = null;
+  try {
+    const savedTheme = localStorage.getItem('hanyang-homepage-theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') selectedTheme = savedTheme;
+  } catch (_) {}
+  const applyTheme = (theme) => {
+    document.documentElement.style.colorScheme = theme;
+    root.style.colorScheme = theme;
+    if (themeToggle) {
+      const nextTheme = theme === 'dark' ? 'light' : 'dark';
+      themeToggle.textContent = nextTheme === 'dark' ? 'Dark mode' : 'Light mode';
+      themeToggle.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
+    }
+  };
+  applyTheme(selectedTheme || (systemPreference.matches ? 'dark' : 'light'));
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      selectedTheme = root.style.colorScheme === 'dark' ? 'light' : 'dark';
+      applyTheme(selectedTheme);
+      try { localStorage.setItem('hanyang-homepage-theme', selectedTheme); } catch (_) {}
+    });
+  }
+  systemPreference.addEventListener('change', (event) => {
+    if (!selectedTheme) applyTheme(event.matches ? 'dark' : 'light');
+  });
   const portrait = root.querySelector('.hp-portrait');
   if (!portrait) return;
   const alternate = portrait.getAttribute('data-alternate-src');
