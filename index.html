@@ -35,6 +35,18 @@
 #hanyang-homepage-draft .hp-about-layout { display: grid; grid-template-columns: minmax(0, 1fr) 156px; gap: 24px; align-items: start; }
 #hanyang-homepage-draft .hp-portrait { display: block; width: 156px; max-width: 100%; height: auto; aspect-ratio: 1171 / 1416; object-fit: cover; grid-column: 2; grid-row: 1; }
 #hanyang-homepage-draft .hp-about-copy { grid-column: 1; grid-row: 1; }
+#hanyang-homepage-draft .hp-about-education h3 { font-size: 17px; font-weight: 700; margin: 0 0 12px; }
+#hanyang-homepage-draft .hp-education { margin: 0; padding: 0; list-style: none; }
+#hanyang-homepage-draft .hp-education li { display: grid; grid-template-columns: minmax(0, 1fr) max-content; gap: 14px; margin: 0 0 17px; }
+#hanyang-homepage-draft .hp-education li:last-child { margin-bottom: 0; }
+#hanyang-homepage-draft .hp-degree { display: block; }
+#hanyang-homepage-draft .hp-teaching-group + .hp-teaching-group { margin-top: 16px; }
+#hanyang-homepage-draft .hp-teaching-group h3 { font-size: 16px; margin-bottom: 4px; line-height: 1.5; }
+#hanyang-homepage-draft .hp-teaching-role { color: var(--hp-muted); font-size: 14px; font-weight: 400; }
+#hanyang-homepage-draft .hp-teaching-courses { margin: 0; padding-left: 19px; list-style: disc; }
+#hanyang-homepage-draft .hp-teaching-courses li { margin-bottom: 3px; }
+#hanyang-homepage-draft .hp-teaching-courses li:last-child { margin-bottom: 0; }
+#hanyang-homepage-draft .hp-teaching-course { display: grid; grid-template-columns: minmax(0, 1fr) 110px; gap: 14px; }
 #hanyang-homepage-draft h2 { font-size: 21px; font-weight: 700; margin: 0; line-height: 1.4; }
 #hanyang-homepage-draft h3 { font-size: 17px; font-weight: 500; margin: 0 0 10px; }
 #hanyang-homepage-draft p { margin: 0 0 15px; }
@@ -84,6 +96,8 @@
 @media (max-width: 400px) {
   #hanyang-homepage-draft { padding: 24px 18px; }
   #hanyang-homepage-draft .hp-talks li { grid-template-columns: 1fr; gap: 2px; }
+  #hanyang-homepage-draft .hp-education li { grid-template-columns: 1fr; gap: 2px; }
+  #hanyang-homepage-draft .hp-teaching-course { grid-template-columns: 1fr; gap: 2px; }
   #hanyang-homepage-draft .hp-date { text-align: left; padding: 0; }
 }
 @media (max-width: 520px) {
@@ -98,11 +112,9 @@
       <h1>Hanyang Li</h1>
       <nav aria-label="Homepage sections">
         <a href="#hp-about">About</a>
-        <a href="#hp-research">Research</a>
-        <a href="#hp-publications">Publications and Preprints</a>
+        <a href="#hp-publications">Publications</a>
         <a href="#hp-talks">Talks and Presentations</a>
-        <a href="https://scholar.google.com/citations?hl=en&amp;user=V45E46EAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        <a href="https://github.com/lhyoung99" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#hp-teaching">Teaching</a>
       </nav>
     </header>
 
@@ -111,18 +123,28 @@
       <div class="hp-about-layout">
         <img class="hp-portrait" src="portrait-lights.jpg" alt="Hanyang Li" width="1171" height="1416" decoding="async" data-alternate-src="photos.jpg">
         <div class="hp-about-copy">
-        <p>I am a Ph.D. candidate in Operations Research at <a href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer">UC Berkeley</a>, advised by <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a>.</p>
-        <p>Before Berkeley, I earned an M.S. in Industrial Engineering from the <a href="https://twin-cities.umn.edu/" target="_blank" rel="noopener noreferrer">University of Minnesota, Twin Cities</a>, in 2023 and a B.S. in Mathematics and Applied Mathematics from the <a href="https://en.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a> in 2021.</p>
+        <p>I am a Ph.D. candidate in the Department of <a href="https://ieor.berkeley.edu/" target="_blank" rel="noopener noreferrer">Industrial Engineering and Operations Research (IEOR)</a> at the <a href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer">University of California, Berkeley</a>, advised by Professor <a href="https://sites.google.com/site/optyingcui/" target="_blank" rel="noopener noreferrer">Ying Cui</a>.</p>
+          <p id="hp-research">My research focuses on the design and analysis of optimization algorithms, especially for nonsmooth and ill-conditioned problems. I study how algorithms can make reliable progress on these landscapes by building and refining models of their local geometry. My recent interests also include optimization under precision and memory constraints. I examine how quantization affects optimization dynamics and use these insights to design algorithms for memory-efficient model training and inference.</p>
         <p id="hp-contact"><strong>Email:</strong> hanyang_li AT berkeley DOT edu</p>
         </div>
       </div>
-    </section>
-
-    <section class="hp-section" id="hp-research" aria-labelledby="hp-research-title">
-      <h2 id="hp-research-title">Research Interests</h2>
-      <div>
-        <p>My research focuses on optimization theory and algorithm design. I study how algorithms can make reliable progress on nonsmooth or ill-conditioned landscapes arising from implicitly defined objectives (e.g., value functions in parametric optimization and sequential decision-making). I also investigate how compressed representations affect optimization (e.g., quantization in memory-efficient model training and inference).</p>
-      </div>
+      <section class="hp-about-education" id="hp-education" aria-labelledby="hp-education-title">
+      <h3 id="hp-education-title">Education</h3>
+      <ul class="hp-education">
+        <li>
+          <div><a href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer">University of California, Berkeley</a><span class="hp-degree">Ph.D. in Operations Research</span></div>
+          <span class="hp-date">2023–2027 (Expected)</span>
+        </li>
+        <li>
+          <div><a href="https://twin-cities.umn.edu/" target="_blank" rel="noopener noreferrer">University of Minnesota, Twin Cities</a><span class="hp-degree">M.S. in Industrial and Systems Engineering</span></div>
+          <span class="hp-date">2021–2023</span>
+        </li>
+        <li>
+          <div><a href="https://en.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a><span class="hp-degree">B.S. in Mathematics and Applied Mathematics</span></div>
+          <span class="hp-date">2017–2021</span>
+        </li>
+      </ul>
+      </section>
     </section>
 
     <section class="hp-section" id="hp-publications" aria-labelledby="hp-publications-title">
@@ -288,6 +310,31 @@
           <span class="hp-date">07/2023</span>
         </li>
       </ul>
+    </section>
+
+    <section class="hp-section" id="hp-teaching" aria-labelledby="hp-teaching-title">
+      <h2 id="hp-teaching-title">Teaching</h2>
+      <div>
+        <div class="hp-teaching-group">
+          <h3>University of California, Berkeley <span class="hp-teaching-role">· Graduate Student Instructor</span></h3>
+          <ul class="hp-teaching-courses">
+            <li><div class="hp-teaching-course"><span>INDENG 242A: Machine Learning and Data Analytics</span><span class="hp-date">Fall 2025</span></div></li>
+          </ul>
+        </div>
+        <div class="hp-teaching-group">
+          <h3>University of Minnesota, Twin Cities <span class="hp-teaching-role">· Teaching Assistant</span></h3>
+          <ul class="hp-teaching-courses">
+            <li><div class="hp-teaching-course"><span>IE 3012: Optimization II</span><span class="hp-date">Spring 2022</span></div></li>
+            <li><div class="hp-teaching-course"><span>IE 5441: Financial Decision Making</span><span class="hp-date">Spring 2022</span></div></li>
+          </ul>
+        </div>
+        <div class="hp-teaching-group">
+          <h3>University of Science and Technology of China <span class="hp-teaching-role">· Teaching Assistant</span></h3>
+          <ul class="hp-teaching-courses">
+            <li><div class="hp-teaching-course"><span>Mathematical Analysis B1</span><span class="hp-date">Fall 2020</span></div></li>
+          </ul>
+        </div>
+      </div>
     </section>
     <footer>Last updated: October 2026</footer>
   </div>
